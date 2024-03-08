@@ -16,7 +16,7 @@ export default function HomePage() {
         const baseUrl =
           process.env.NODE_ENV === "development"
             ? "http://localhost:3001"
-            : "https://tech-blog-app-wine.vercel.app/";
+            : "https://tech-blog-app-wine.vercel.app";
 
         const response = await fetch(`${baseUrl}/api/getAllPosts`);
 
