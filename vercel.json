@@ -1,6 +1,9 @@
 {
   "version": 2,
-  "builds": [{ "src": "server/server.js", "use": "@vercel/node-bridge" }],
+  "builds": [
+    { "src": "server/server.js", "use": "@now/node-server" },
+    { "src": "public/**/*", "use": "@now/static" }
+  ],
   "routes": [
     { "src": "/api/(.*)", "dest": "/server/server.js" },
     { "src": "/(.*)", "dest": "/public/$1" }
