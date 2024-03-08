@@ -13,6 +13,11 @@ export default function HomePage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        const baseUrl =
+          process.env.NODE_ENV === "development"
+            ? "http://localhost:3001"
+            : "https://tech-blog-app-wine.vercel.app/";
+
         const response = await fetch("http://localhost:3001/api/getAllPosts");
 
         if (!response.ok) {
